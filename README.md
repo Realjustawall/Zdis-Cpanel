@@ -40,4 +40,3 @@ python3 scripts/package.py
 Node.js is needed for rebuilding only. The deployed application runs on PHP/MySQL. Production secrets and config.php must stay outside the public document root and outside Git.
 
 The Node.js server in `source/server` is preserved as upstream reference; this cPanel build does not run it. Existing upstream workflows under `source/.github` are reference files. The active workflow is `.github/workflows/cpanel.yml`.
-

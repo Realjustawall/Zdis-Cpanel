@@ -1,0 +1,2003 @@
+{
+  "commit": "655b0afed3dc93cda9eebd189bd00c6fcf53f5e7",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/admin/users/:id/access",
+      "module": "admin",
+      "line": 73
+    },
+    {
+      "method": "PUT",
+      "path": "/api/admin/users/:id/access",
+      "module": "admin",
+      "line": 77
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/overview",
+      "module": "admin",
+      "line": 91
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/operations",
+      "module": "admin",
+      "line": 151
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/platform",
+      "module": "admin",
+      "line": 210
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/platform/configuration",
+      "module": "admin",
+      "line": 253
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/platform/fish-audio/models",
+      "module": "admin",
+      "line": 267
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/platform/smtp/test",
+      "module": "admin",
+      "line": 276
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/backups",
+      "module": "admin",
+      "line": 285
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/backups/:id/verify",
+      "module": "admin",
+      "line": 295
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/queue/:id/retry",
+      "module": "admin",
+      "line": 307
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/analytics",
+      "module": "admin",
+      "line": 317
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/users",
+      "module": "admin",
+      "line": 346
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/roles",
+      "module": "admin",
+      "line": 362
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/roles",
+      "module": "admin",
+      "line": 367
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/roles/:id",
+      "module": "admin",
+      "line": 384
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/roles/:id",
+      "module": "admin",
+      "line": 402
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/groups/:id/discovery",
+      "module": "admin",
+      "line": 412
+    },
+    {
+      "method": "PUT",
+      "path": "/api/admin/users/:userId/roles/:roleId",
+      "module": "admin",
+      "line": 431
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/users/:userId/roles",
+      "module": "admin",
+      "line": 449
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/users/suggest-password",
+      "module": "admin",
+      "line": 468
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users",
+      "module": "admin",
+      "line": 487
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/users/:id",
+      "module": "admin",
+      "line": 522
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/badges",
+      "module": "admin",
+      "line": 587
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/badges",
+      "module": "admin",
+      "line": 588
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/badges/:id",
+      "module": "admin",
+      "line": 592
+    },
+    {
+      "method": "PUT",
+      "path": "/api/admin/users/:id/badges",
+      "module": "admin",
+      "line": 594
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/linked-accounts/:id/verification",
+      "module": "admin",
+      "line": 626
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:id/password",
+      "module": "admin",
+      "line": 643
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:id/unlock",
+      "module": "admin",
+      "line": 679
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:id/disable-2fa",
+      "module": "admin",
+      "line": 694
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/users/:id/sessions",
+      "module": "admin",
+      "line": 714
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/users/:id/logout",
+      "module": "admin",
+      "line": 722
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/users/:id",
+      "module": "admin",
+      "line": 745
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/groups",
+      "module": "admin",
+      "line": 791
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/groups/:id",
+      "module": "admin",
+      "line": 798
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/settings",
+      "module": "admin",
+      "line": 824
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/admin/settings",
+      "module": "admin",
+      "line": 870
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/audit",
+      "module": "admin",
+      "line": 894
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/admin/audit/:id",
+      "module": "admin",
+      "line": 919
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/audit/verify",
+      "module": "admin",
+      "line": 931
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/audit/export",
+      "module": "admin",
+      "line": 945
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/notification-dlq/:deadLetterId/retry",
+      "module": "admin",
+      "line": 994
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/notification-dlq",
+      "module": "admin",
+      "line": 1020
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/maintenance/purge",
+      "module": "admin",
+      "line": 1044
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/public-settings",
+      "module": "auth",
+      "line": 56
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/register",
+      "module": "auth",
+      "line": 72
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "module": "auth",
+      "line": 134
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "module": "auth",
+      "line": 282
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/me",
+      "module": "auth",
+      "line": 295
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/moderation-appeals",
+      "module": "auth",
+      "line": 312
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/moderation-appeals",
+      "module": "auth",
+      "line": 343
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/password",
+      "module": "auth",
+      "line": 377
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/sessions",
+      "module": "auth",
+      "line": 416
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/auth/sessions/:id",
+      "module": "auth",
+      "line": 427
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/sessions/revoke-others",
+      "module": "auth",
+      "line": 448
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/totp/setup",
+      "module": "auth",
+      "line": 460
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/totp/enable",
+      "module": "auth",
+      "line": 475
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/totp/disable",
+      "module": "auth",
+      "line": 512
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/totp/recovery-codes",
+      "module": "auth",
+      "line": 554
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/totp/recovery-codes/regenerate",
+      "module": "auth",
+      "line": 563
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/security-events",
+      "module": "auth",
+      "line": 592
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/security-events/:id/acknowledge",
+      "module": "auth",
+      "line": 607
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/avatar",
+      "module": "auth",
+      "line": 638
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/auth/profile",
+      "module": "auth",
+      "line": 658
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId",
+      "module": "builtinBots",
+      "line": 20
+    },
+    {
+      "method": "PUT",
+      "path": "/api/builtin-bots/groups/:groupId",
+      "module": "builtinBots",
+      "line": 21
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/status",
+      "module": "builtinBots",
+      "line": 22
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/preview",
+      "module": "builtinBots",
+      "line": 23
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/test",
+      "module": "builtinBots",
+      "line": 24
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/actions",
+      "module": "builtinBots",
+      "line": 25
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/cases",
+      "module": "builtinBots",
+      "line": 26
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/leaderboard",
+      "module": "builtinBots",
+      "line": 27
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/tickets",
+      "module": "builtinBots",
+      "line": 28
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/tickets",
+      "module": "builtinBots",
+      "line": 29
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/builtin-bots/groups/:groupId/tickets/:ticketId",
+      "module": "builtinBots",
+      "line": 30
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/tickets/:ticketId/transcript",
+      "module": "builtinBots",
+      "line": 31
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/self-roles",
+      "module": "builtinBots",
+      "line": 32
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/self-roles",
+      "module": "builtinBots",
+      "line": 33
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/points",
+      "module": "builtinBots",
+      "line": 35
+    },
+    {
+      "method": "GET",
+      "path": "/api/builtin-bots/groups/:groupId/profile/:userId",
+      "module": "builtinBots",
+      "line": 37
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/profile",
+      "module": "builtinBots",
+      "line": 38
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/embeds",
+      "module": "builtinBots",
+      "line": 40
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/temporary-voice",
+      "module": "builtinBots",
+      "line": 42
+    },
+    {
+      "method": "POST",
+      "path": "/api/builtin-bots/groups/:groupId/temporary-invite",
+      "module": "builtinBots",
+      "line": 43
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations",
+      "module": "conversations",
+      "line": 26
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/dm",
+      "module": "conversations",
+      "line": 34
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/group",
+      "module": "conversations",
+      "line": 62
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId",
+      "module": "conversations",
+      "line": 96
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/conversations/:conversationId",
+      "module": "conversations",
+      "line": 113
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/members",
+      "module": "conversations",
+      "line": 138
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/conversations/:conversationId/members/:userId",
+      "module": "conversations",
+      "line": 159
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/conversations/:conversationId",
+      "module": "conversations",
+      "line": 188
+    },
+    {
+      "method": "GET",
+      "path": "/api/e2ee/identity",
+      "module": "e2ee",
+      "line": 21
+    },
+    {
+      "method": "GET",
+      "path": "/api/e2ee/identity/bootstrap",
+      "module": "e2ee",
+      "line": 26
+    },
+    {
+      "method": "PUT",
+      "path": "/api/e2ee/identity",
+      "module": "e2ee",
+      "line": 32
+    },
+    {
+      "method": "GET",
+      "path": "/api/e2ee/conversations/:id/participants",
+      "module": "e2ee",
+      "line": 47
+    },
+    {
+      "method": "GET",
+      "path": "/api/files/limits",
+      "module": "files",
+      "line": 37
+    },
+    {
+      "method": "GET",
+      "path": "/api/files/quota",
+      "module": "files",
+      "line": 54
+    },
+    {
+      "method": "POST",
+      "path": "/api/files/resumable",
+      "module": "files",
+      "line": 59
+    },
+    {
+      "method": "GET",
+      "path": "/api/files/:attachmentId/:variant(preview|optimized)",
+      "module": "files",
+      "line": 83
+    },
+    {
+      "method": "GET",
+      "path": "/api/files/resumable/:uploadId",
+      "module": "files",
+      "line": 136
+    },
+    {
+      "method": "PUT",
+      "path": "/api/files/resumable/:uploadId/parts/:partNumber",
+      "module": "files",
+      "line": 146
+    },
+    {
+      "method": "POST",
+      "path": "/api/files/resumable/:uploadId/complete",
+      "module": "files",
+      "line": 168
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/files/resumable/:uploadId",
+      "module": "files",
+      "line": 186
+    },
+    {
+      "method": "POST",
+      "path": "/api/files/voice",
+      "module": "files",
+      "line": 199
+    },
+    {
+      "method": "POST",
+      "path": "/api/files",
+      "module": "files",
+      "line": 227
+    },
+    {
+      "method": "GET",
+      "path": "/api/files/:attachmentId",
+      "module": "files",
+      "line": 259
+    },
+    {
+      "method": "GET",
+      "path": "/api/forums/:channelId/posts",
+      "module": "forums",
+      "line": 59
+    },
+    {
+      "method": "POST",
+      "path": "/api/forums/:channelId/posts",
+      "module": "forums",
+      "line": 107
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/forums/:channelId/posts/:postId",
+      "module": "forums",
+      "line": 181
+    },
+    {
+      "method": "GET",
+      "path": "/api/forums/:channelId/posts/:postId/root",
+      "module": "forums",
+      "line": 230
+    },
+    {
+      "method": "POST",
+      "path": "/api/forums/:channelId/posts/:postId/members",
+      "module": "forums",
+      "line": 247
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/forums/:channelId/posts/:postId/members/:userId",
+      "module": "forums",
+      "line": 287
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups",
+      "module": "groups",
+      "line": 171
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/discover",
+      "module": "groups",
+      "line": 178
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/discover/:groupId/join",
+      "module": "groups",
+      "line": 186
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups",
+      "module": "groups",
+      "line": 203
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId",
+      "module": "groups",
+      "line": 239
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/expressions",
+      "module": "groups",
+      "line": 306
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/external-expressions",
+      "module": "groups",
+      "line": 323
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/expressions",
+      "module": "groups",
+      "line": 348
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/expressions/:expressionId",
+      "module": "groups",
+      "line": 416
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/community",
+      "module": "groups",
+      "line": 449
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/insights",
+      "module": "groups",
+      "line": 528
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/events",
+      "module": "groups",
+      "line": 565
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/groups/:groupId/events/:eventId",
+      "module": "groups",
+      "line": 620
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/events/:eventId",
+      "module": "groups",
+      "line": 677
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/events/:eventId/rsvp",
+      "module": "groups",
+      "line": 721
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/boosts",
+      "module": "groups",
+      "line": 745
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/boosts/mine",
+      "module": "groups",
+      "line": 765
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/subscription-tiers",
+      "module": "groups",
+      "line": 779
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/subscriptions",
+      "module": "groups",
+      "line": 810
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/subscriptions/:subscriptionId",
+      "module": "groups",
+      "line": 833
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/moderation",
+      "module": "groups",
+      "line": 849
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/members/:userId/timeout",
+      "module": "groups",
+      "line": 902
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/bans/:userId",
+      "module": "groups",
+      "line": 936
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/bans/:userId",
+      "module": "groups",
+      "line": 973
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/automod-rules",
+      "module": "groups",
+      "line": 986
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/automod-rules/:ruleId",
+      "module": "groups",
+      "line": 1017
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/channel-follows",
+      "module": "groups",
+      "line": 1030
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/channel-follows",
+      "module": "groups",
+      "line": 1057
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/channel-follows/:sourceChannelId/:targetChannelId",
+      "module": "groups",
+      "line": 1087
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/groups/:groupId",
+      "module": "groups",
+      "line": 1114
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/icon",
+      "module": "groups",
+      "line": 1154
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/channels/:channelId/overrides",
+      "module": "groups",
+      "line": 1221
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/channels/:channelId/overrides",
+      "module": "groups",
+      "line": 1233
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/channels/:channelId/overrides/:targetType/:targetId",
+      "module": "groups",
+      "line": 1274
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/channels/:channelId/permissions/sync",
+      "module": "groups",
+      "line": 1295
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/categories/:categoryId/overrides",
+      "module": "groups",
+      "line": 1321
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/categories/:categoryId/overrides",
+      "module": "groups",
+      "line": 1336
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/categories/:categoryId/overrides/:targetType/:targetId",
+      "module": "groups",
+      "line": 1377
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId",
+      "module": "groups",
+      "line": 1396
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/roles",
+      "module": "groups",
+      "line": 1476
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/roles",
+      "module": "groups",
+      "line": 1485
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/roles/reorder",
+      "module": "groups",
+      "line": 1514
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/groups/:groupId/roles/:roleId",
+      "module": "groups",
+      "line": 1561
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/roles/:roleId",
+      "module": "groups",
+      "line": 1597
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/members/:userId/roles/:roleId",
+      "module": "groups",
+      "line": 1622
+    },
+    {
+      "method": "PUT",
+      "path": "/api/groups/:groupId/onboarding/roles/:roleId",
+      "module": "groups",
+      "line": 1663
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/members",
+      "module": "groups",
+      "line": 1703
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/members",
+      "module": "groups",
+      "line": 1716
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/groups/:groupId/members/:userId",
+      "module": "groups",
+      "line": 1779
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/members/:userId",
+      "module": "groups",
+      "line": 1869
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/transfer",
+      "module": "groups",
+      "line": 1929
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/invites",
+      "module": "groups",
+      "line": 1977
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/invites",
+      "module": "groups",
+      "line": 1986
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/invites/:inviteId",
+      "module": "groups",
+      "line": 2016
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/join/:code",
+      "module": "groups",
+      "line": 2027
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/categories",
+      "module": "groups",
+      "line": 2065
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/groups/:groupId/categories/:categoryId",
+      "module": "groups",
+      "line": 2098
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/categories/:categoryId",
+      "module": "groups",
+      "line": 2137
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/channels",
+      "module": "groups",
+      "line": 2205
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/groups/:groupId/channels/:channelId",
+      "module": "groups",
+      "line": 2309
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/channels/:channelId",
+      "module": "groups",
+      "line": 2421
+    },
+    {
+      "method": "GET",
+      "path": "/api/groups/:groupId/channels/:channelId/members",
+      "module": "groups",
+      "line": 2477
+    },
+    {
+      "method": "POST",
+      "path": "/api/groups/:groupId/channels/:channelId/members",
+      "module": "groups",
+      "line": 2493
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/groups/:groupId/channels/:channelId/members/:userId",
+      "module": "groups",
+      "line": 2530
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/oauth/token",
+      "module": "integrations",
+      "line": 43
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/incoming/:webhookId/:token",
+      "module": "integrations",
+      "line": 90
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/api-keys",
+      "module": "integrations",
+      "line": 142
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/integrations/bots/:botId",
+      "module": "integrations",
+      "line": 147
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/api-keys",
+      "module": "integrations",
+      "line": 162
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/integrations/api-keys/:keyId",
+      "module": "integrations",
+      "line": 188
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/bots",
+      "module": "integrations",
+      "line": 203
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/bots",
+      "module": "integrations",
+      "line": 208
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/apps",
+      "module": "integrations",
+      "line": 229
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/apps",
+      "module": "integrations",
+      "line": 251
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/oauth/authorize",
+      "module": "integrations",
+      "line": 298
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/groups/:groupId/bots/:botId/install",
+      "module": "integrations",
+      "line": 346
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/integrations/groups/:groupId/bots/:botId/install",
+      "module": "integrations",
+      "line": 441
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/groups/:groupId/commands",
+      "module": "integrations",
+      "line": 482
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/groups/:groupId/commands",
+      "module": "integrations",
+      "line": 505
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/commands/:commandId/execute",
+      "module": "integrations",
+      "line": 544
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/commands/:commandId/permissions",
+      "module": "integrations",
+      "line": 615
+    },
+    {
+      "method": "PUT",
+      "path": "/api/integrations/commands/:commandId/permissions",
+      "module": "integrations",
+      "line": 646
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/webhooks",
+      "module": "integrations",
+      "line": 721
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/incoming",
+      "module": "integrations",
+      "line": 726
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/incoming",
+      "module": "integrations",
+      "line": 751
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/integrations/incoming/:webhookId",
+      "module": "integrations",
+      "line": 787
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/webhooks",
+      "module": "integrations",
+      "line": 800
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/webhooks/:webhookId/test",
+      "module": "integrations",
+      "line": 830
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/webhooks/:webhookId/deliveries",
+      "module": "integrations",
+      "line": 846
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/webhooks/:webhookId/deliveries/:deliveryId/retry",
+      "module": "integrations",
+      "line": 874
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/integrations/webhooks/:webhookId",
+      "module": "integrations",
+      "line": 894
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/integrations/webhooks/:webhookId",
+      "module": "integrations",
+      "line": 903
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/sync",
+      "module": "integrations",
+      "line": 933
+    },
+    {
+      "method": "GET",
+      "path": "/api/integrations/export",
+      "module": "integrations",
+      "line": 972
+    },
+    {
+      "method": "POST",
+      "path": "/api/integrations/import",
+      "module": "integrations",
+      "line": 1008
+    },
+    {
+      "method": "GET",
+      "path": "/api/channels/:channelId/messages",
+      "module": "messages",
+      "line": 279
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId/messages",
+      "module": "messages",
+      "line": 279
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/messages",
+      "module": "messages",
+      "line": 313
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/messages",
+      "module": "messages",
+      "line": 313
+    },
+    {
+      "method": "GET",
+      "path": "/api/channels/:channelId/draft",
+      "module": "messages",
+      "line": 644
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId/draft",
+      "module": "messages",
+      "line": 644
+    },
+    {
+      "method": "PUT",
+      "path": "/api/channels/:channelId/draft",
+      "module": "messages",
+      "line": 654
+    },
+    {
+      "method": "PUT",
+      "path": "/api/conversations/:conversationId/draft",
+      "module": "messages",
+      "line": 654
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/channels/:channelId/draft",
+      "module": "messages",
+      "line": 679
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/conversations/:conversationId/draft",
+      "module": "messages",
+      "line": 679
+    },
+    {
+      "method": "GET",
+      "path": "/api/channels/:channelId/scheduled",
+      "module": "messages",
+      "line": 692
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId/scheduled",
+      "module": "messages",
+      "line": 692
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/scheduled",
+      "module": "messages",
+      "line": 704
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/scheduled",
+      "module": "messages",
+      "line": 704
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/channels/:channelId/scheduled/:scheduledId",
+      "module": "messages",
+      "line": 750
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/conversations/:conversationId/scheduled/:scheduledId",
+      "module": "messages",
+      "line": 750
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/polls",
+      "module": "messages",
+      "line": 760
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/polls",
+      "module": "messages",
+      "line": 760
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/channels/:channelId/messages/:messageId",
+      "module": "messages",
+      "line": 827
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/conversations/:conversationId/messages/:messageId",
+      "module": "messages",
+      "line": 827
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/channels/:channelId/messages/:messageId/poll",
+      "module": "messages",
+      "line": 878
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/conversations/:conversationId/messages/:messageId/poll",
+      "module": "messages",
+      "line": 878
+    },
+    {
+      "method": "GET",
+      "path": "/api/channels/:channelId/messages/:messageId/poll/analytics",
+      "module": "messages",
+      "line": 906
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId/messages/:messageId/poll/analytics",
+      "module": "messages",
+      "line": 906
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/messages/:messageId/poll/close",
+      "module": "messages",
+      "line": 918
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/messages/:messageId/poll/close",
+      "module": "messages",
+      "line": 918
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/channels/:channelId/messages/:messageId",
+      "module": "messages",
+      "line": 935
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/conversations/:conversationId/messages/:messageId",
+      "module": "messages",
+      "line": 935
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/messages/:messageId/report",
+      "module": "messages",
+      "line": 1014
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/messages/:messageId/report",
+      "module": "messages",
+      "line": 1014
+    },
+    {
+      "method": "PUT",
+      "path": "/api/channels/:channelId/messages/:messageId/reactions/:emoji",
+      "module": "messages",
+      "line": 1065
+    },
+    {
+      "method": "PUT",
+      "path": "/api/conversations/:conversationId/messages/:messageId/reactions/:emoji",
+      "module": "messages",
+      "line": 1065
+    },
+    {
+      "method": "GET",
+      "path": "/api/channels/:channelId/messages/:messageId/thread",
+      "module": "messages",
+      "line": 1126
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId/messages/:messageId/thread",
+      "module": "messages",
+      "line": 1126
+    },
+    {
+      "method": "PUT",
+      "path": "/api/channels/:channelId/messages/:messageId/poll-vote",
+      "module": "messages",
+      "line": 1138
+    },
+    {
+      "method": "PUT",
+      "path": "/api/conversations/:conversationId/messages/:messageId/poll-vote",
+      "module": "messages",
+      "line": 1138
+    },
+    {
+      "method": "PUT",
+      "path": "/api/channels/:channelId/messages/:messageId/saved",
+      "module": "messages",
+      "line": 1182
+    },
+    {
+      "method": "PUT",
+      "path": "/api/conversations/:conversationId/messages/:messageId/saved",
+      "module": "messages",
+      "line": 1182
+    },
+    {
+      "method": "PUT",
+      "path": "/api/channels/:channelId/messages/:messageId/pin",
+      "module": "messages",
+      "line": 1197
+    },
+    {
+      "method": "PUT",
+      "path": "/api/conversations/:conversationId/messages/:messageId/pin",
+      "module": "messages",
+      "line": 1197
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/messages/:messageId/publish",
+      "module": "messages",
+      "line": 1224
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/messages/:messageId/publish",
+      "module": "messages",
+      "line": 1224
+    },
+    {
+      "method": "GET",
+      "path": "/api/channels/:channelId/pins",
+      "module": "messages",
+      "line": 1283
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/:conversationId/pins",
+      "module": "messages",
+      "line": 1283
+    },
+    {
+      "method": "POST",
+      "path": "/api/channels/:channelId/read",
+      "module": "messages",
+      "line": 1307
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/:conversationId/read",
+      "module": "messages",
+      "line": 1307
+    },
+    {
+      "method": "GET",
+      "path": "/api/search",
+      "module": "messages",
+      "line": 1404
+    },
+    {
+      "method": "GET",
+      "path": "/api/unread",
+      "module": "messages",
+      "line": 1445
+    },
+    {
+      "method": "GET",
+      "path": "/api/mentions",
+      "module": "messages",
+      "line": 1452
+    },
+    {
+      "method": "GET",
+      "path": "/api/saved",
+      "module": "messages",
+      "line": 1472
+    },
+    {
+      "method": "GET",
+      "path": "/api/moderation/reports",
+      "module": "moderation",
+      "line": 33
+    },
+    {
+      "method": "GET",
+      "path": "/api/moderation/appeals",
+      "module": "moderation",
+      "line": 49
+    },
+    {
+      "method": "GET",
+      "path": "/api/moderation/user-reports",
+      "module": "moderation",
+      "line": 63
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/moderation/appeals/:id",
+      "module": "moderation",
+      "line": 76
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/moderation/reports/:id",
+      "module": "moderation",
+      "line": 111
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/moderation/user-reports/:id",
+      "module": "moderation",
+      "line": 144
+    },
+    {
+      "method": "POST",
+      "path": "/api/moderation/users/:id/actions",
+      "module": "moderation",
+      "line": 163
+    },
+    {
+      "method": "GET",
+      "path": "/api/network",
+      "module": "network",
+      "line": 53
+    },
+    {
+      "method": "POST",
+      "path": "/api/network/friends",
+      "module": "network",
+      "line": 68
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/runtime",
+      "module": "network",
+      "line": 108
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/friends",
+      "module": "network",
+      "line": 125
+    },
+    {
+      "method": "POST",
+      "path": "/api/network/friends/:userId",
+      "module": "network",
+      "line": 132
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/network/friends/:id",
+      "module": "network",
+      "line": 165
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/network/friends/:id",
+      "module": "network",
+      "line": 191
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/collabs",
+      "module": "network",
+      "line": 207
+    },
+    {
+      "method": "POST",
+      "path": "/api/network/collabs",
+      "module": "network",
+      "line": 212
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/network/collabs/:id",
+      "module": "network",
+      "line": 243
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/network/collabs/:id",
+      "module": "network",
+      "line": 267
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/access-requests",
+      "module": "network",
+      "line": 279
+    },
+    {
+      "method": "POST",
+      "path": "/api/network/access-requests",
+      "module": "network",
+      "line": 286
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/network/access-requests/:id",
+      "module": "network",
+      "line": 307
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/network/access-requests/:id",
+      "module": "network",
+      "line": 318
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/roster",
+      "module": "network",
+      "line": 332
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/roster/suggest-password",
+      "module": "network",
+      "line": 354
+    },
+    {
+      "method": "POST",
+      "path": "/api/network/roster",
+      "module": "network",
+      "line": 362
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/linked-accounts/:userId",
+      "module": "network",
+      "line": 408
+    },
+    {
+      "method": "POST",
+      "path": "/api/network/linked-accounts",
+      "module": "network",
+      "line": 423
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/network/linked-accounts/:id",
+      "module": "network",
+      "line": 436
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/network/linked-accounts/:id",
+      "module": "network",
+      "line": 451
+    },
+    {
+      "method": "GET",
+      "path": "/api/network/badges",
+      "module": "network",
+      "line": 462
+    },
+    {
+      "method": "PUT",
+      "path": "/api/network/badges/:userId/secondary",
+      "module": "network",
+      "line": 464
+    },
+    {
+      "method": "GET",
+      "path": "/api/notifications",
+      "module": "notifications",
+      "line": 23
+    },
+    {
+      "method": "POST",
+      "path": "/api/notifications/read",
+      "module": "notifications",
+      "line": 42
+    },
+    {
+      "method": "GET",
+      "path": "/api/notifications/preferences",
+      "module": "notifications",
+      "line": 51
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/notifications/preferences",
+      "module": "notifications",
+      "line": 61
+    },
+    {
+      "method": "GET",
+      "path": "/api/notifications/channels/:targetType/:targetId",
+      "module": "notifications",
+      "line": 86
+    },
+    {
+      "method": "PUT",
+      "path": "/api/notifications/channels/:targetType/:targetId",
+      "module": "notifications",
+      "line": 98
+    },
+    {
+      "method": "POST",
+      "path": "/api/notifications/push-subscriptions",
+      "module": "notifications",
+      "line": 123
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/notifications/push-subscriptions",
+      "module": "notifications",
+      "line": 150
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/sso/providers",
+      "module": "sso",
+      "line": 25
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/sso/oidc/start",
+      "module": "sso",
+      "line": 30
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/sso/oidc/callback",
+      "module": "sso",
+      "line": 35
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/sso/saml/start",
+      "module": "sso",
+      "line": 44
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/sso/saml/callback",
+      "module": "sso",
+      "line": 49
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/sso/saml/metadata",
+      "module": "sso",
+      "line": 58
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/sso/ldap/login",
+      "module": "sso",
+      "line": 66
+    },
+    {
+      "method": "GET",
+      "path": "/api/tts/status",
+      "module": "tts",
+      "line": 12
+    },
+    {
+      "method": "POST",
+      "path": "/api/tts",
+      "module": "tts",
+      "line": 14
+    },
+    {
+      "method": "GET",
+      "path": "/api/users",
+      "module": "users",
+      "line": 24
+    },
+    {
+      "method": "POST",
+      "path": "/api/users/:id/report",
+      "module": "users",
+      "line": 33
+    },
+    {
+      "method": "GET",
+      "path": "/api/users/:id",
+      "module": "users",
+      "line": 48
+    },
+    {
+      "method": "POST",
+      "path": "/api/users/:id/block",
+      "module": "users",
+      "line": 78
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/users/:id/block",
+      "module": "users",
+      "line": 107
+    },
+    {
+      "method": "GET",
+      "path": "/api/users/me/blocks",
+      "module": "users",
+      "line": 119
+    },
+    {
+      "method": "GET",
+      "path": "/api/users/me/groups",
+      "module": "users",
+      "line": 132
+    },
+    {
+      "method": "PUT",
+      "path": "/api/users/me/activity",
+      "module": "users",
+      "line": 139
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/users/me/activity",
+      "module": "users",
+      "line": 170
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/transcript-webhook",
+      "module": "voice",
+      "line": 27
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/direct/:conversationId/token",
+      "module": "voice",
+      "line": 74
+    },
+    {
+      "method": "GET",
+      "path": "/api/voice/:channelId",
+      "module": "voice",
+      "line": 92
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/voice/:channelId/status",
+      "module": "voice",
+      "line": 192
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/voice/:channelId/settings",
+      "module": "voice",
+      "line": 221
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/:channelId/lobby",
+      "module": "voice",
+      "line": 258
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/voice/:channelId/lobby/:userId",
+      "module": "voice",
+      "line": 279
+    },
+    {
+      "method": "PUT",
+      "path": "/api/voice/:channelId/consent",
+      "module": "voice",
+      "line": 296
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/:channelId/token",
+      "module": "voice",
+      "line": 317
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/:channelId/stage/request",
+      "module": "voice",
+      "line": 408
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/voice/:channelId/stage/:userId",
+      "module": "voice",
+      "line": 430
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/:channelId/participants/:userId/action",
+      "module": "voice",
+      "line": 461
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/:channelId/recordings",
+      "module": "voice",
+      "line": 512
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/voice/:channelId/recordings/:recordingId",
+      "module": "voice",
+      "line": 574
+    },
+    {
+      "method": "GET",
+      "path": "/api/voice/:channelId/transcript",
+      "module": "voice",
+      "line": 591
+    },
+    {
+      "method": "POST",
+      "path": "/api/voice/:channelId/quality",
+      "module": "voice",
+      "line": 615
+    },
+    {
+      "method": "GET",
+      "path": "/api/voice/:channelId/quality",
+      "module": "voice",
+      "line": 653
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "results": [
+    {
+      "name": "login visual comparison en-1440",
+      "status": "captured"
+    },
+    {
+      "name": "login visual comparison fa-1440",
+      "status": "captured"
+    },
+    {
+      "name": "login visual comparison fa-390",
+      "status": "captured"
+    },
+    {
+      "name": "login, workspace, open channel, send message through original React UI",
+      "status": "PASS"
+    },
+    {
+      "name": "two browser accounts exchange and decrypt E2EE messages over PHP polling",
+      "status": "PASS"
+    },
+    {
+      "name": "WebRTC incoming video ring, answer and offer/answer negotiation through PHP transport",
+      "status": "PASS"
+    },
+    {
+      "name": "WebRTC synthetic-media RTP delivery",
+      "status": "PASS"
+    },
+    {
+      "name": "session persists after reload",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,1982 @@
+[
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "GET",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "POST",
+    "local_path": "/dm"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "POST",
+    "local_path": "/group"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "GET",
+    "local_path": "/:conversationId"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "PATCH",
+    "local_path": "/:conversationId"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "POST",
+    "local_path": "/:conversationId/members"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "DELETE",
+    "local_path": "/:conversationId/members/:userId"
+  },
+  {
+    "source": "server/src/routes/conversations.js",
+    "router": "conversationsRouter",
+    "method": "DELETE",
+    "local_path": "/:conversationId"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "GET",
+    "local_path": "/limits"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "GET",
+    "local_path": "/quota"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "POST",
+    "local_path": "/resumable"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "GET",
+    "local_path": "/:attachmentId/:variant(preview|optimized)"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "GET",
+    "local_path": "/resumable/:uploadId"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "PUT",
+    "local_path": "/resumable/:uploadId/parts/:partNumber"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "content-sha256"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "POST",
+    "local_path": "/resumable/:uploadId/complete"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "DELETE",
+    "local_path": "/resumable/:uploadId"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "POST",
+    "local_path": "/voice"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "POST",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/files.js",
+    "router": "filesRouter",
+    "method": "GET",
+    "local_path": "/:attachmentId"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "GET",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "POST",
+    "local_path": "/read"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "GET",
+    "local_path": "/preferences"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "PATCH",
+    "local_path": "/preferences"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "GET",
+    "local_path": "/channels/:targetType/:targetId"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "PUT",
+    "local_path": "/channels/:targetType/:targetId"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "POST",
+    "local_path": "/push-subscriptions"
+  },
+  {
+    "source": "server/src/routes/notifications.js",
+    "router": "notificationsRouter",
+    "method": "DELETE",
+    "local_path": "/push-subscriptions"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/discover"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/discover/:groupId/join"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/expressions"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/external-expressions"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/expressions"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/expressions/:expressionId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/community"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/insights"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/events"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PATCH",
+    "local_path": "/:groupId/events/:eventId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/events/:eventId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/events/:eventId/rsvp"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/boosts"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/boosts/mine"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/subscription-tiers"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/subscriptions"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/subscriptions/:subscriptionId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/moderation"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/members/:userId/timeout"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/bans/:userId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/bans/:userId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/automod-rules"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/automod-rules/:ruleId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/channel-follows"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/channel-follows"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/channel-follows/:sourceChannelId/:targetChannelId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PATCH",
+    "local_path": "/:groupId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/icon"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/channels/:channelId/overrides"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/channels/:channelId/overrides"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/channels/:channelId/overrides/:targetType/:targetId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/channels/:channelId/permissions/sync"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/categories/:categoryId/overrides"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/categories/:categoryId/overrides"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/categories/:categoryId/overrides/:targetType/:targetId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/roles"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/roles"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/roles/reorder"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PATCH",
+    "local_path": "/:groupId/roles/:roleId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/roles/:roleId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/members/:userId/roles/:roleId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PUT",
+    "local_path": "/:groupId/onboarding/roles/:roleId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/members"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/members"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PATCH",
+    "local_path": "/:groupId/members/:userId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/members/:userId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/transfer"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/invites"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/invites"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/invites/:inviteId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/join/:code"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/categories"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PATCH",
+    "local_path": "/:groupId/categories/:categoryId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/categories/:categoryId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "allow",
+    "method": "DELETE",
+    "local_path": "viewChannel"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "deny",
+    "method": "DELETE",
+    "local_path": "viewChannel"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/channels"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "tx",
+    "method": "GET",
+    "local_path": "SELECT id FROM users WHERE id=? FOR UPDATE"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "tx",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM channels WHERE created_by=?"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "tx",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM channels WHERE group_id=?"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "PATCH",
+    "local_path": "/:groupId/channels/:channelId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/channels/:channelId"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "GET",
+    "local_path": "/:groupId/channels/:channelId/members"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "POST",
+    "local_path": "/:groupId/channels/:channelId/members"
+  },
+  {
+    "source": "server/src/routes/groups.js",
+    "router": "groupsRouter",
+    "method": "DELETE",
+    "local_path": "/:groupId/channels/:channelId/members/:userId"
+  },
+  {
+    "source": "server/src/routes/forums.js",
+    "router": "forumsRouter",
+    "method": "GET",
+    "local_path": "/:channelId/posts"
+  },
+  {
+    "source": "server/src/routes/forums.js",
+    "router": "forumsRouter",
+    "method": "POST",
+    "local_path": "/:channelId/posts"
+  },
+  {
+    "source": "server/src/routes/forums.js",
+    "router": "forumsRouter",
+    "method": "PATCH",
+    "local_path": "/:channelId/posts/:postId"
+  },
+  {
+    "source": "server/src/routes/forums.js",
+    "router": "forumsRouter",
+    "method": "GET",
+    "local_path": "/:channelId/posts/:postId/root"
+  },
+  {
+    "source": "server/src/routes/forums.js",
+    "router": "forumsRouter",
+    "method": "POST",
+    "local_path": "/:channelId/posts/:postId/members"
+  },
+  {
+    "source": "server/src/routes/forums.js",
+    "router": "forumsRouter",
+    "method": "DELETE",
+    "local_path": "/:channelId/posts/:postId/members/:userId"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "GET",
+    "local_path": "/public-settings"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/register"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/login"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "user-agent"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/logout"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "GET",
+    "local_path": "/me"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/moderation-appeals"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "GET",
+    "local_path": "/moderation-appeals"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/password"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "user-agent"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "GET",
+    "local_path": "/sessions"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "DELETE",
+    "local_path": "/sessions/:id"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/sessions/revoke-others"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/totp/setup"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/totp/enable"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "user-agent"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/totp/disable"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "user-agent"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "GET",
+    "local_path": "/totp/recovery-codes"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/totp/recovery-codes/regenerate"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "GET",
+    "local_path": "/security-events"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/security-events/:id/acknowledge"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "POST",
+    "local_path": "/avatar"
+  },
+  {
+    "source": "server/src/routes/auth.js",
+    "router": "authRouter",
+    "method": "PATCH",
+    "local_path": "/profile"
+  },
+  {
+    "source": "server/src/routes/tts.js",
+    "router": "ttsRouter",
+    "method": "GET",
+    "local_path": "/status"
+  },
+  {
+    "source": "server/src/routes/tts.js",
+    "router": "ttsRouter",
+    "method": "POST",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/users/:id/access"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PUT",
+    "local_path": "/users/:id/access"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/overview"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM chat_groups"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM messages WHERE deleted_at IS NULL"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count, COALESCE(SUM(size), 0) AS bytes FROM attachments"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM sessions WHERE revoked_at IS NULL AND expires_at > ?"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM message_reports WHERE status IN ('open', 'reviewing')"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COUNT(*) AS count FROM notification_dead_letters WHERE status = 'open'"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/operations"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT 1 AS ok"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/platform"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "db",
+    "method": "GET",
+    "local_path": "SELECT COALESCE(SUM(limit_bytes), 0) AS capacity, COALESCE(SUM(used_bytes), 0) AS used, COALESCE(SUM(reserved_bytes), 0) AS reserved FROM storage_quotas"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PATCH",
+    "local_path": "/platform/configuration"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/platform/fish-audio/models"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/platform/smtp/test"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/backups"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/backups/:id/verify"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/queue/:id/retry"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/analytics"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/users"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/roles"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/roles"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PATCH",
+    "local_path": "/roles/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "DELETE",
+    "local_path": "/roles/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PATCH",
+    "local_path": "/groups/:id/discovery"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PUT",
+    "local_path": "/users/:userId/roles/:roleId"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/users/:userId/roles"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/users/suggest-password"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/users"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PATCH",
+    "local_path": "/users/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/badges"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/badges"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "DELETE",
+    "local_path": "/badges/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PUT",
+    "local_path": "/users/:id/badges"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PATCH",
+    "local_path": "/linked-accounts/:id/verification"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/users/:id/password"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/users/:id/unlock"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/users/:id/disable-2fa"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/users/:id/sessions"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/users/:id/logout"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "DELETE",
+    "local_path": "/users/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/groups"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "DELETE",
+    "local_path": "/groups/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/settings"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "PATCH",
+    "local_path": "/settings"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/audit"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "DELETE",
+    "local_path": "/audit/:id"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/audit/verify"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/audit/export"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/notification-dlq/:deadLetterId/retry"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "GET",
+    "local_path": "/notification-dlq"
+  },
+  {
+    "source": "server/src/routes/admin.js",
+    "router": "adminRouter",
+    "method": "POST",
+    "local_path": "/maintenance/purge"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/transcript-webhook"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "authorization"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/direct/:conversationId/token"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "GET",
+    "local_path": "/:channelId"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "PATCH",
+    "local_path": "/:channelId/status"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "PATCH",
+    "local_path": "/:channelId/settings"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/:channelId/lobby"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "PATCH",
+    "local_path": "/:channelId/lobby/:userId"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "PUT",
+    "local_path": "/:channelId/consent"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/:channelId/token"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/:channelId/stage/request"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "PATCH",
+    "local_path": "/:channelId/stage/:userId"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/:channelId/participants/:userId/action"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/:channelId/recordings"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "DELETE",
+    "local_path": "/:channelId/recordings/:recordingId"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "GET",
+    "local_path": "/:channelId/transcript"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "POST",
+    "local_path": "/:channelId/quality"
+  },
+  {
+    "source": "server/src/routes/voice.js",
+    "router": "voiceRouter",
+    "method": "GET",
+    "local_path": "/:channelId/quality"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "PUT",
+    "local_path": "/groups/:groupId"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/status"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/preview"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/test"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/actions"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/cases"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/leaderboard"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/tickets"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/tickets"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "PATCH",
+    "local_path": "/groups/:groupId/tickets/:ticketId"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/tickets/:ticketId/transcript"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/self-roles"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/self-roles"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/points"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/profile/:userId"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/profile"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/embeds"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/temporary-voice"
+  },
+  {
+    "source": "server/src/routes/builtinBots.js",
+    "router": "builtinBotsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/temporary-invite"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/oauth/token"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/incoming/:webhookId/:token"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/api-keys"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "DELETE",
+    "local_path": "/bots/:botId"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/api-keys"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "DELETE",
+    "local_path": "/api-keys/:keyId"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/bots"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/bots"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/apps"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/apps"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/oauth/authorize"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/bots/:botId/install"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "DELETE",
+    "local_path": "/groups/:groupId/bots/:botId/install"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/groups/:groupId/commands"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/groups/:groupId/commands"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/commands/:commandId/execute"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/commands/:commandId/permissions"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "PUT",
+    "local_path": "/commands/:commandId/permissions"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/webhooks"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/incoming"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/incoming"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "DELETE",
+    "local_path": "/incoming/:webhookId"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/webhooks"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/webhooks/:webhookId/test"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/webhooks/:webhookId/deliveries"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/webhooks/:webhookId/deliveries/:deliveryId/retry"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "DELETE",
+    "local_path": "/webhooks/:webhookId"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "PATCH",
+    "local_path": "/webhooks/:webhookId"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/sync"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "GET",
+    "local_path": "/export"
+  },
+  {
+    "source": "server/src/routes/integrations.js",
+    "router": "integrationsRouter",
+    "method": "POST",
+    "local_path": "/import"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "GET",
+    "local_path": "/messages"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/messages"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "GET",
+    "local_path": "/draft"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PUT",
+    "local_path": "/draft"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "DELETE",
+    "local_path": "/draft"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "GET",
+    "local_path": "/scheduled"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/scheduled"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "DELETE",
+    "local_path": "/scheduled/:scheduledId"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/polls"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PATCH",
+    "local_path": "/messages/:messageId"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PATCH",
+    "local_path": "/messages/:messageId/poll"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "GET",
+    "local_path": "/messages/:messageId/poll/analytics"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/messages/:messageId/poll/close"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "DELETE",
+    "local_path": "/messages/:messageId"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/messages/:messageId/report"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PUT",
+    "local_path": "/messages/:messageId/reactions/:emoji"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "GET",
+    "local_path": "/messages/:messageId/thread"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PUT",
+    "local_path": "/messages/:messageId/poll-vote"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PUT",
+    "local_path": "/messages/:messageId/saved"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "PUT",
+    "local_path": "/messages/:messageId/pin"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/messages/:messageId/publish"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "GET",
+    "local_path": "/pins"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "router",
+    "method": "POST",
+    "local_path": "/read"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "messagesRouter",
+    "method": "GET",
+    "local_path": "/search"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "messagesRouter",
+    "method": "GET",
+    "local_path": "/unread"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "messagesRouter",
+    "method": "GET",
+    "local_path": "/mentions"
+  },
+  {
+    "source": "server/src/routes/messages.js",
+    "router": "messagesRouter",
+    "method": "GET",
+    "local_path": "/saved"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "GET",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "POST",
+    "local_path": "/:id/report"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "GET",
+    "local_path": "/:id"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "POST",
+    "local_path": "/:id/block"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "DELETE",
+    "local_path": "/:id/block"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "GET",
+    "local_path": "/me/blocks"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "GET",
+    "local_path": "/me/groups"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "PUT",
+    "local_path": "/me/activity"
+  },
+  {
+    "source": "server/src/routes/users.js",
+    "router": "usersRouter",
+    "method": "DELETE",
+    "local_path": "/me/activity"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "GET",
+    "local_path": "/reports"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "GET",
+    "local_path": "/appeals"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "GET",
+    "local_path": "/user-reports"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "PATCH",
+    "local_path": "/appeals/:id"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "PATCH",
+    "local_path": "/reports/:id"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "PATCH",
+    "local_path": "/user-reports/:id"
+  },
+  {
+    "source": "server/src/routes/moderation.js",
+    "router": "moderationRouter",
+    "method": "POST",
+    "local_path": "/users/:id/actions"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "GET",
+    "local_path": "/providers"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "GET",
+    "local_path": "/oidc/start"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "GET",
+    "local_path": "/oidc/callback"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "GET",
+    "local_path": "/saml/start"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "POST",
+    "local_path": "/saml/callback"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "GET",
+    "local_path": "/saml/metadata"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "ssoRouter",
+    "method": "POST",
+    "local_path": "/ldap/login"
+  },
+  {
+    "source": "server/src/routes/sso.js",
+    "router": "req",
+    "method": "GET",
+    "local_path": "user-agent"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "POST",
+    "local_path": "/friends"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/runtime"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/friends"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "POST",
+    "local_path": "/friends/:userId"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "PATCH",
+    "local_path": "/friends/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "DELETE",
+    "local_path": "/friends/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/collabs"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "POST",
+    "local_path": "/collabs"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "PATCH",
+    "local_path": "/collabs/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "DELETE",
+    "local_path": "/collabs/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/access-requests"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "POST",
+    "local_path": "/access-requests"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "PATCH",
+    "local_path": "/access-requests/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "DELETE",
+    "local_path": "/access-requests/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/roster"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/roster/suggest-password"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "POST",
+    "local_path": "/roster"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/linked-accounts/:userId"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "POST",
+    "local_path": "/linked-accounts"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "PATCH",
+    "local_path": "/linked-accounts/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "DELETE",
+    "local_path": "/linked-accounts/:id"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "GET",
+    "local_path": "/badges"
+  },
+  {
+    "source": "server/src/routes/network.js",
+    "router": "networkRouter",
+    "method": "PUT",
+    "local_path": "/badges/:userId/secondary"
+  },
+  {
+    "source": "server/src/routes/e2ee.js",
+    "router": "e2eeRouter",
+    "method": "GET",
+    "local_path": "/identity"
+  },
+  {
+    "source": "server/src/routes/e2ee.js",
+    "router": "e2eeRouter",
+    "method": "GET",
+    "local_path": "/identity/bootstrap"
+  },
+  {
+    "source": "server/src/routes/e2ee.js",
+    "router": "e2eeRouter",
+    "method": "PUT",
+    "local_path": "/identity"
+  },
+  {
+    "source": "server/src/routes/e2ee.js",
+    "router": "e2eeRouter",
+    "method": "GET",
+    "local_path": "/conversations/:id/participants"
+  }
+]

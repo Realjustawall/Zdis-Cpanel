@@ -1,0 +1,215 @@
+{
+  "DISCORD_PERMISSION_KEYS": [
+    "createInvite",
+    "kickMember",
+    "banMembers",
+    "administrator",
+    "manageChannels",
+    "manageGroup",
+    "addReactions",
+    "viewAuditLog",
+    "prioritySpeaker",
+    "video",
+    "viewChannel",
+    "sendMessages",
+    "sendTtsMessages",
+    "deleteAnyMessage",
+    "embedLinks",
+    "attachFiles",
+    "readMessageHistory",
+    "mentionEveryone",
+    "useExternalEmojis",
+    "viewServerInsights",
+    "connectVoice",
+    "speak",
+    "muteMembers",
+    "deafenMembers",
+    "moveMembers",
+    "useVoiceActivity",
+    "changeNickname",
+    "manageNicknames",
+    "manageRoles",
+    "manageWebhooks",
+    "manageExpressions",
+    "useApplicationCommands",
+    "requestToSpeak",
+    "manageEvents",
+    "manageThreads",
+    "createPublicThreads",
+    "createPrivateThreads",
+    "useExternalStickers",
+    "sendMessagesInThreads",
+    "useEmbeddedActivities",
+    "moderateMembers",
+    "viewCreatorMonetizationAnalytics",
+    "useSoundboard",
+    "createExpressions",
+    "createEvents",
+    "useExternalSounds",
+    "sendVoiceMessages",
+    "setVoiceChannelStatus",
+    "sendPolls",
+    "useExternalApps",
+    "pinMessage",
+    "bypassSlowmode"
+  ],
+  "PLATFORM_PERMISSION_KEYS": [
+    "manageMembers",
+    "sendImages",
+    "sendVideos",
+    "sendAudio",
+    "screenShare"
+  ],
+  "DEFAULT_EVERYONE_PERMISSIONS": [
+    "sendImages",
+    "sendVideos",
+    "sendAudio",
+    "screenShare",
+    "viewChannel",
+    "sendMessages",
+    "sendTtsMessages",
+    "sendMessagesInThreads",
+    "createPublicThreads",
+    "embedLinks",
+    "attachFiles",
+    "addReactions",
+    "readMessageHistory",
+    "useApplicationCommands",
+    "sendVoiceMessages",
+    "sendPolls",
+    "connectVoice",
+    "speak",
+    "video",
+    "useVoiceActivity",
+    "requestToSpeak",
+    "useEmbeddedActivities",
+    "useSoundboard"
+  ],
+  "GROUP_PERMISSIONS": {
+    "manageGroup": [
+      "owner",
+      "admin"
+    ],
+    "viewAuditLog": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "deleteGroup": [
+      "owner"
+    ],
+    "manageChannels": [
+      "owner",
+      "admin"
+    ],
+    "manageMembers": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "manageRoles": [
+      "owner",
+      "admin"
+    ],
+    "createInvite": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "changeNickname": [
+      "owner",
+      "admin",
+      "moderator",
+      "member"
+    ],
+    "manageNicknames": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "deleteAnyMessage": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "pinMessage": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "kickMember": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "banMembers": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "moderateMembers": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "manageExpressions": [
+      "owner",
+      "admin"
+    ],
+    "createExpressions": [
+      "owner",
+      "admin"
+    ],
+    "manageWebhooks": [
+      "owner",
+      "admin"
+    ],
+    "viewServerInsights": [
+      "owner",
+      "admin"
+    ],
+    "viewCreatorMonetizationAnalytics": [
+      "owner",
+      "admin"
+    ],
+    "createEvents": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "manageEvents": [
+      "owner",
+      "admin"
+    ],
+    "manageThreads": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "muteMembers": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "deafenMembers": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "moveMembers": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "setVoiceChannelStatus": [
+      "owner",
+      "admin",
+      "moderator"
+    ],
+    "bypassSlowmode": [
+      "owner",
+      "admin",
+      "moderator"
+    ]
+  }
+}

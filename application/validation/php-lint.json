@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "count": 21,
+  "files": [
+    "app/admin.php",
+    "app/advanced.php",
+    "app/auth.php",
+    "app/bootstrap.php",
+    "app/bots.php",
+    "app/community.php",
+    "app/core.php",
+    "app/extra.php",
+    "app/files.php",
+    "app/groups.php",
+    "app/integrations.php",
+    "app/messages.php",
+    "app/permissions.php",
+    "app/realtime.php",
+    "app/social.php",
+    "bin/cron.php",
+    "bin/install.php",
+    "config.example.php",
+    "public/index.php",
+    "public/paths.php",
+    "public/setup.php"
+  ]
+}

@@ -1,0 +1,83 @@
+name: Build and test cPanel PHP package
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cpanel-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: disposable-ci-password
+          MYSQL_DATABASE: zdis_test
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -pdisposable-ci-password"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_mysql, mbstring, fileinfo, curl, gd, openssl
+          coverage: none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install build and test dependencies
+        run: |
+          npm ci --ignore-scripts --prefix source
+          python -m pip install cryptography
+          cd source
+          npx playwright install --with-deps chromium
+      - name: Build original React UI for PHP
+        run: node rebuild-frontend.mjs
+      - name: Lint PHP
+        run: find application/app application/bin application/public -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Configure disposable test database
+        run: |
+          mkdir -p build
+          python - <<'PYCONFIG'
+          import pathlib,secrets
+          root=pathlib.Path.cwd()
+          config="<?php return "+"['dsn'=>'mysql:host=127.0.0.1;port=3306;dbname=zdis_test;charset=utf8mb4','db_user'=>'root','db_password'=>'disposable-ci-password','app_key'=>'"+secrets.token_hex(32)+"','origin'=>'http://127.0.0.1:8087','secure_cookies'=>false,'test_allow_local_http'=>true,'storage'=>'"+str(root/'build/test-storage')+"','ice_servers'=>[]];"
+          (root/'build/test-config.php').write_text(config)
+          PYCONFIG
+      - name: API and browser regression tests
+        env:
+          ZDIS_TEST_DISPOSABLE: '1'
+          ZDIS_CONFIG: ${{ github.workspace }}/build/test-config.php
+          ZDIS_ADMIN_PASSWORD: TestAdmin12345!
+          ZDIS_PHP_BIN: php
+          NODE_PATH: ${{ github.workspace }}/source/node_modules
+        run: python scripts/test.py --browser
+      - name: Package cPanel installation ZIP
+        run: python scripts/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cpanel-install-package
+          path: |
+            build/ZDis-cPanel-PHP-preview.zip
+            build/ZDis-cPanel-PHP-preview.zip.sha256
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: build/validation/
+          if-no-files-found: ignore

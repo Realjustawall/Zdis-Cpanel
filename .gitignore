@@ -1,0 +1,10 @@
+/build/
+/node_modules/
+/source/node_modules/
+/source/client/dist/
+/source/client/*.tsbuildinfo
+/application/config.php
+/application/storage/*
+!/application/storage/.gitkeep
+__pycache__/
+*.pyc

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "bot",
+    "label": "BOT",
+    "kind": "primary",
+    "icon": "code",
+    "color": "#5865f2",
+    "position": -3
+  },
+  {
+    "id": "verified_bot",
+    "label": "Verified bot",
+    "kind": "primary",
+    "icon": "check",
+    "color": "#168545",
+    "position": -2
+  },
+  {
+    "id": "official",
+    "label": "Official account",
+    "kind": "primary",
+    "icon": "check",
+    "color": "#b8860b",
+    "position": -1
+  },
+  {
+    "id": "partner",
+    "label": "Partner",
+    "kind": "primary",
+    "icon": "handshake",
+    "color": "#8864dc",
+    "position": 10
+  },
+  {
+    "id": "early_supporter",
+    "label": "Early Supporter",
+    "kind": "primary",
+    "icon": "star",
+    "color": "#ad4ba5",
+    "position": 11
+  },
+  {
+    "id": "bug_hunter",
+    "label": "Bug Hunter",
+    "kind": "primary",
+    "icon": "shield",
+    "color": "#168545",
+    "position": 12
+  },
+  {
+    "id": "community_moderator",
+    "label": "Community Moderator",
+    "kind": "primary",
+    "icon": "shield",
+    "color": "#5275c9",
+    "position": 13
+  },
+  {
+    "id": "booster",
+    "label": "Server Booster",
+    "kind": "primary",
+    "icon": "star",
+    "color": "#ba42a0",
+    "position": 14
+  },
+  {
+    "id": "admin",
+    "label": "Administrator",
+    "kind": "primary",
+    "icon": "shield",
+    "color": "#ed4245",
+    "position": 0
+  },
+  {
+    "id": "staff",
+    "label": "Staff",
+    "kind": "primary",
+    "icon": "star",
+    "color": "#5865f2",
+    "position": 1
+  },
+  {
+    "id": "developer",
+    "label": "Developer",
+    "kind": "primary",
+    "icon": "code",
+    "color": "#00b0f4",
+    "position": 2
+  },
+  {
+    "id": "streamer",
+    "label": "Streamer",
+    "kind": "primary",
+    "icon": "broadcast",
+    "color": "#eb459e",
+    "position": 3
+  },
+  {
+    "id": "content_creator",
+    "label": "Content Creator",
+    "kind": "primary",
+    "icon": "camera",
+    "color": "#faa61a",
+    "position": 4
+  },
+  {
+    "id": "youtube",
+    "label": "YouTube",
+    "kind": "primary",
+    "icon": "youtube",
+    "color": "#ff0000",
+    "position": 5
+  },
+  {
+    "id": "twitch",
+    "label": "Twitch",
+    "kind": "primary",
+    "icon": "twitch",
+    "color": "#9146ff",
+    "position": 6
+  },
+  {
+    "id": "kick",
+    "label": "Kick",
+    "kind": "primary",
+    "icon": "kick",
+    "color": "#53fc18",
+    "position": 7
+  },
+  {
+    "id": "instagram",
+    "label": "Instagram",
+    "kind": "primary",
+    "icon": "instagram",
+    "color": "#e1306c",
+    "position": 8
+  },
+  {
+    "id": "tiktok",
+    "label": "TikTok",
+    "kind": "primary",
+    "icon": "tiktok",
+    "color": "#25f4ee",
+    "position": 9
+  },
+  {
+    "id": "editor",
+    "label": "Editor",
+    "kind": "secondary",
+    "icon": "scissors",
+    "color": "#43b581",
+    "position": 20
+  },
+  {
+    "id": "picoart",
+    "label": "PicoArt \u00b7 Thumbnail Artist",
+    "kind": "secondary",
+    "icon": "palette",
+    "color": "#faa61a",
+    "position": 21
+  },
+  {
+    "id": "team",
+    "label": "Team",
+    "kind": "secondary",
+    "icon": "handshake",
+    "color": "#5865f2",
+    "position": 22
+  }
+]

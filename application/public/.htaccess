@@ -1,0 +1,17 @@
+Require all granted
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^api(?:/|$) index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+</IfModule>
+<FilesMatch "(^\.|\.(sql|log|ini|md|bak|env)$)">
+Require all denied
+</FilesMatch>
+
+<Files "paths.php">
+Require all denied
+</Files>

@@ -1,0 +1,1 @@
+{"passed": 107, "status": "PASS", "tested": ["auth", "csrf", "groups", "invites", "private channels", "message idempotency", "reactions", "pins", "saved", "unread", "E2EE signatures", "multipart files", "range requests", "resumable uploads", "friends", "notifications", "polls", "voice signalling", "revocation", "audit"]}

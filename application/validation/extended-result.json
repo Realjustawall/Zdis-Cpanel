@@ -1,0 +1,1 @@
+{"status": "PASS", "passed": 86, "extraAssertions": ["role precedence", "private forum confidentiality", "anonymous poll privacy", "API scopes and revocation", "OAuth code replay", "bot uninstall", "real HTTP webhook HMAC", "bot settings conflict", "daily/transfer", "self roles", "ticket privacy and close", "event RSVP and boosts"]}
