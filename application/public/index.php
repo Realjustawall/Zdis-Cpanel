@@ -6,6 +6,7 @@ $appRoot=require __DIR__.'/paths.php';
 $path=parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH)?:'/';
 if($path==='/setup.php'){require __DIR__.'/setup.php';exit;}
 if(!str_starts_with($path,'/api/')){
+ if(in_array($path,['/','/index.php','/index.html'],true)&&!is_file(getenv('ZDIS_CONFIG')?:$appRoot.'/config.php')){header('Location: /setup.php',true,302);exit;}
  if($path==='/index.php')$path='/';$real=realpath(__DIR__.$path);if($real&&str_starts_with($real,__DIR__.'/')&&is_file($real)&&!str_ends_with($real,'.php')){
   $ext=pathinfo($real,PATHINFO_EXTENSION);$mime=['js'=>'text/javascript','css'=>'text/css','json'=>'application/json','webmanifest'=>'application/manifest+json','svg'=>'image/svg+xml','woff2'=>'font/woff2','png'=>'image/png','ico'=>'image/x-icon','html'=>'text/html'];header('Content-Type: '.($mime[$ext]??'application/octet-stream'));readfile($real);exit;
  }

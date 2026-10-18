@@ -1,0 +1,2 @@
+PASS: first-visit installer wizard connects MySQL and creates administrator in browser.
+{"status": "PASS", "passed": 27, "tested": ["first-visit redirect", "CSRF", "real MySQL connection check", "invalid database", "HTTPS origin validation", "password validation", "wizard browser install", "private config generation", "installation lock", "admin settings", "password change and old-session revocation"]}

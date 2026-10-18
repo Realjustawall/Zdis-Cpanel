@@ -3,6 +3,11 @@ import os,sys,subprocess,pathlib,time,urllib.request,tempfile,shutil,json
 if os.environ.get('ZDIS_TEST_DISPOSABLE')!='1':raise SystemExit('Set ZDIS_TEST_DISPOSABLE=1 on a disposable database only.')
 root=pathlib.Path(__file__).resolve().parents[1];php=os.environ.get('ZDIS_PHP_BIN','php');app=root/'application';env=os.environ.copy();env['ZDIS_PHP_BIN']=php
 out=root/'build/validation';out.mkdir(parents=True,exist_ok=True)
+env['ZDIS_INSTALLER_BROWSER']='1' if '--browser' in sys.argv else '0'
+installer=subprocess.run([sys.executable,str(app/'tests/installer.py')],env=env,text=True,capture_output=True)
+print(installer.stdout,flush=True);print(installer.stderr,flush=True)
+if installer.returncode:raise RuntimeError('Installer regression failed')
+(out/'installer-result.txt').write_text(installer.stdout)
 subprocess.run([php,str(app/'bin/install.php')],input='admin\nadmin@example.test\n',text=True,env=env,check=True)
 with tempfile.TemporaryFile(mode='w+') as log:
  server=subprocess.Popen([php,'-d','upload_max_filesize=32M','-d','post_max_size=34M','-S','127.0.0.1:8087','-t',str(app/'public'),str(app/'public/index.php')],env=env,stdout=log,stderr=log)

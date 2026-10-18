@@ -18,3 +18,6 @@ The PHP development server is a testing tool. Production uses Apache/LiteSpeed P
 
 
 Additional suite: run `tests/extended.py` after the base integration suite, on the same disposable instance. Set `test_allow_local_http=true` ONLY in that disposable config; the suite starts a loopback webhook receiver on port 8091, checks actual cURL delivery and its HMAC. It creates distinct QA fixtures and must not run on production. Production must not allow local webhook destinations. Before independent suites, the development harness clears rate_limits in its disposable database so unrelated login scenarios do not exhaust the same bucket; production rate limits are not raised. Recreate the database before repeating the suites.
+
+
+`tests/installer.py` creates a separate disposable database, starts a clean copy of the application with no config.php, and checks connection errors, existing-table protection, CSRF, configuration generation, installer locking, administrator settings/password changes and session revocation. Set ZDIS_INSTALLER_BROWSER=1 for the three-step browser wizard. It requires CREATE/DROP DATABASE privileges in the disposable test environment; no production database is appropriate. scripts/test.py runs it before the other suites.

@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/Realjustawall/zdis",
   "commit": "655b0afed3dc93cda9eebd189bd00c6fcf53f5e7",
-  "portVersion": "0.2.0-preview",
+  "portVersion": "0.3.0-preview",
   "upstreamModified": false,
   "runtime": "PHP >=8.2 + MySQL/MariaDB",
   "ui": "Original React UI; realtime transport import adapted"

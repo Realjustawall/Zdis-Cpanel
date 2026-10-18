@@ -1,6 +1,6 @@
 Require all granted
 Options -Indexes -MultiViews
-DirectoryIndex index.html index.php
+DirectoryIndex index.php index.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule ^api(?:/|$) index.php [QSA,L]

@@ -20,7 +20,7 @@ function adminRoutes(string $m,string $p,array $b): ?array {
  if($p==='/api/admin/analytics'&&$m==='GET'){
   $hours=max(1,min(168,(int)($_GET['hours']??24)));$series=[];for($n=$hours-1;$n>=0;$n--){$at=(int)(floor(now()/3600000)*3600000)-$n*3600000;$pt=['at'=>$at,'messages'=>0,'users'=>0,'audits'=>0,'reports'=>0];foreach(['messages'=>'message','audits'=>'audit','reports'=>'report']as$key=>$kind)$pt[$key]=(int)row('SELECT COUNT(*) n FROM entities WHERE kind=? AND created_at>=? AND created_at<?',[$kind,$at,$at+3600000])['n'];$pt['users']=(int)row('SELECT COUNT(*) n FROM accounts WHERE created_at>=? AND created_at<?',[$at,$at+3600000])['n'];$series[]=$pt;}return ['series'=>$series];
  }
- if($p==='/api/admin/users/suggest-password'&&$m==='GET')return ['password'=>bin2hex(random_bytes(10))];
+ if($p==='/api/admin/users/suggest-password'&&$m==='GET')return ['password'=>'Aa1!'.bin2hex(random_bytes(14))];
  if($p==='/api/admin/users'){
   if($m==='GET'){$term=(string)($_GET['search']??'');$us=rows('SELECT id FROM accounts WHERE username LIKE ? OR email LIKE ? OR data LIKE ? ORDER BY created_at DESC LIMIT 500',['%'.$term.'%','%'.$term.'%','%'.$term.'%']);return ['users'=>array_map(fn($r)=>adminUser(account($r['id'])),$us)];}
   if($m==='POST'){$role=enumValue($b['role']??'member',['admin','youtuber','member','staff','developer']);$u=createUser($b,$role);identityFor($u['id']);audit('admin.user_created',$u['id']);return ['user'=>adminUser($u)];}

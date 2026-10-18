@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "count": 21,
+  "count": 22,
   "files": [
     "app/admin.php",
     "app/advanced.php",
@@ -12,6 +12,7 @@
     "app/extra.php",
     "app/files.php",
     "app/groups.php",
+    "app/installer.php",
     "app/integrations.php",
     "app/messages.php",
     "app/permissions.php",

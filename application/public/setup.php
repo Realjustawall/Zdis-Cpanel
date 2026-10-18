@@ -1,24 +1,77 @@
 <?php
 declare(strict_types=1);
-ini_set('display_errors','0');header('Cache-Control: no-store');header('X-Content-Type-Options: nosniff');header('X-Frame-Options: DENY');
-$error='';$success=false;$appRoot=require __DIR__.'/paths.php';
-if(!is_file($appRoot.'/config.php')){http_response_code(503);exit('Create config.php outside the public folder using config.example.php, then set app_key and setup_token.');}
-require $appRoot.'/app/core.php';require $appRoot.'/app/auth.php';
-if(strlen(cfg()['setup_token']??'')<32){http_response_code(404);exit('The installer is disabled. Set a random setup_token of at least 32 characters in config.php.');}
-try{
- $lock=fopen(storageDir().'/install.lock','c');if(!$lock||!flock($lock,LOCK_EX))throw new RuntimeException('Installer lock unavailable.');
- $installed=false;try{$installed=(int)row('SELECT COUNT(*) n FROM accounts')['n']>0;}catch(PDOException $e){if($e->getCode()!=='42S02')throw $e;}
- if($installed){http_response_code(403);exit('Installation is locked because an account already exists. Sign in at /.');}
- if($_SERVER['REQUEST_METHOD']==='POST'){
-  if(!hash_equals(cfg()['setup_token'],(string)($_POST['token']??'')))throw new HttpError(403,'توکن نصب صحیح نیست.');
-  $origin=$_SERVER['HTTP_ORIGIN']??null;if($origin!==null&&!hash_equals(cfg()['origin'],$origin))throw new HttpError(403,'دامنه با origin تنظیم‌شده یکسان نیست.');
-  if(strlen(cfg()['app_key']??'')!==64||!ctype_xdigit(cfg()['app_key']))throw new RuntimeException('Invalid app key.');
-  // Validate input before applying schema; never create a partial administrator.
+ini_set('display_errors','0');header('Cache-Control: no-store');header('X-Content-Type-Options: nosniff');header('X-Frame-Options: DENY');header('Referrer-Policy: same-origin');
+$appRoot=require __DIR__.'/paths.php';require_once $appRoot.'/app/core.php';require_once $appRoot.'/app/installer.php';
+$configPath=getenv('ZDIS_CONFIG')?:$appRoot.'/config.php';$existing=is_file($configPath);$legacy=$existing?(require $configPath):null;$locked=$existing&&(strlen($legacy['setup_token']??'')<32||is_file($appRoot.'/storage/installed.lock'));
+$requirements=installerRequirements($appRoot);$ready=!in_array(false,$requirements,true);$error='';$success=false;
+$secure=(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off');
+if(!$locked&&$ready){
+ $sessionDir=$appRoot.'/storage/installer-sessions';if(!is_dir($sessionDir))mkdir($sessionDir,0700,true);session_save_path($sessionDir);ini_set('session.use_strict_mode','1');session_name('zdis_install');session_set_cookie_params(['httponly'=>true,'secure'=>$secure,'samesite'=>'Strict','path'=>'/']);session_start();$_SESSION['csrf']??=bin2hex(random_bytes(32));
+}
+$csrf=$_SESSION['csrf']??'';if($locked)http_response_code(403);
+if($_SERVER['REQUEST_METHOD']==='POST'){
+ $pending=null;$published=false;$pdo=null;$created=[];$started=false;$before=null;
+ try{
+  if($locked)fail(403,'نصب‌کننده قفل است. برای مدیریت سایت وارد حساب مدیر شوید.');
+  if(!$ready)fail(503,'ابتدا موارد پیش‌نیاز را برطرف کنید.');
+  if(!is_string($_POST['csrf']??null)||!hash_equals($csrf,$_POST['csrf']))fail(403,'نشست نصب معتبر نیست. صفحه را تازه کنید.');
+  $requestOrigin=$_SERVER['HTTP_ORIGIN']??null;$host=$_SERVER['HTTP_HOST']??'';
+  if($requestOrigin!==null){$o=parse_url($requestOrigin);if(!$o||($o['host'].(isset($o['port'])?':'.$o['port']:''))!==$host)fail(403,'دامنهٔ درخواست نصب معتبر نیست.');}
+  $lock=fopen($appRoot.'/storage/install.lock','c');if(!$lock||!flock($lock,LOCK_EX))fail(503,'قفل نصب در دسترس نیست.');
+  clearstatcache(true,$configPath);if(!$existing&&is_file($configPath))fail(409,'یک نصب دیگر تنظیمات را ثبت کرده است. صفحه را تازه کنید.');
+  if($existing){if(!hash_equals($legacy['setup_token'],(string)($_POST['token']??'')))fail(403,'توکن نصب صحیح نیست.');$config=$legacy;}else $config=installerConfig($_POST,$appRoot);
+  $pdo=installerConnection($config);if((int)$pdo->query("SELECT GET_LOCK('zdis_first_install',10)")->fetchColumn()!==1)fail(409,'نصب دیگری در حال اجراست؛ کمی بعد تلاش کنید.');
+  if($existing){$tables=$pdo->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);if(in_array('accounts',$tables,true)&&(int)$pdo->query('SELECT COUNT(*) FROM accounts')->fetchColumn()>0)fail(403,'قبلاً نصب شده است. نصب مجدد غیرفعال است.');}
+  else installerDatabaseEmpty($pdo);
+  $action=$_POST['action']??'install';
+  if($action==='check'){header('Content-Type: application/json; charset=utf-8');echo json(['ok'=>true,'message'=>'اتصال موفق است؛ دیتابیس برای نصب آماده است.']);exit;}
+  if($action!=='install')fail(400,'درخواست نصب معتبر نیست.');
+  if(($_POST['password']??'')!==($_POST['password_confirmation']??''))fail(400,'رمز عبور و تکرار آن یکسان نیستند.');
+  checkedPassword($_POST,'password');$username=strtolower(required($_POST,'username',32,3));if(!preg_match('/^[a-z0-9._-]+$/D',$username))fail(400,'نام کاربری باید ۳ تا ۳۲ نویسهٔ انگلیسی، عدد، نقطه یا خط تیره باشد.');if(!filter_var($_POST['email']??'',FILTER_VALIDATE_EMAIL))fail(400,'ایمیل مدیر صحیح نیست.');
+  $before=$pdo->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);
+  if(!$existing){
+   $pending=tempnam($appRoot,'.install-');chmod($pending,0600);$bytes="<?php\n// Generated by ZDIS installer. Keep outside the public document root.\nreturn ".var_export($config,true).";\n";
+   if(file_put_contents($pending,$bytes,LOCK_EX)!==strlen($bytes))fail(500,'ذخیرهٔ تنظیمات ممکن نشد. دسترسی پوشهٔ خصوصی را بررسی کنید.');putenv('ZDIS_CONFIG='.$pending);
+  }
   foreach(explode(';',file_get_contents($appRoot.'/app/schema.sql'))as$stmt)if(trim($stmt)!=='')db()->exec($stmt);
-  transaction(function(){if((int)row('SELECT COUNT(*) n FROM accounts')['n']>0)fail(403,'Already installed.');$u=createUser($_POST,'admin');identityFor($u['id']);});$success=true;
+  $created=array_values(array_diff($pdo->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),$before));
+  require_once $appRoot.'/app/auth.php';
+  db()->beginTransaction();$started=true;if((int)row('SELECT COUNT(*) n FROM accounts')['n']>0)fail(403,'قبلاً نصب شده است.');$u=createUser($_POST,'admin');identityFor($u['id']);
+  if(!$existing){if(!rename($pending,$configPath))fail(500,'ذخیرهٔ نهایی تنظیمات ممکن نشد.');$pending=null;$published=true;}
+  db()->commit();
+  // The presence of a configured administrator locks legacy setups too.
+  file_put_contents($appRoot.'/storage/installed.lock',date(DATE_ATOM),LOCK_EX);chmod($appRoot.'/storage/installed.lock',0600);
+  $_SESSION=[];session_destroy();$success=true;
+ }catch(Throwable $e){
+  if($pdo){try{if($started&&db()->inTransaction())db()->rollBack();}catch(Throwable){} }
+  if($published&&is_file($configPath))unlink($configPath);if($pending&&is_file($pending))unlink($pending);
+  // Roll back only tables created by this installation attempt in a previously empty database.
+  if(!$existing&&$pdo&&is_array($before)){try{$created=array_values(array_diff($pdo->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN),$before));}catch(Throwable){}}
+  if(!$existing&&$pdo&&$created)foreach($created as$table)if(in_array($table,['entities','accounts','sessions','memberships','events','rate_limits'],true))try{$pdo->exec('DROP TABLE `'.$table.'`');}catch(Throwable){}
+  $status=$e instanceof HttpError?$e->status:500;http_response_code($status);$error=$e instanceof HttpError?$e->getMessage():'نصب کامل نشد؛ پیش‌نیازها و دسترسی نوشتن پوشهٔ خصوصی را بررسی کنید.';error_log('ZDIS installer: '.get_class($e).' '.$e->getCode());
+  if(($_POST['action']??'')==='check'){header('Content-Type: application/json; charset=utf-8');echo json(['ok'=>false,'message'=>$error]);exit;}
  }
-}catch(Throwable $e){http_response_code($e instanceof HttpError?$e->status:500);$error=$e instanceof HttpError?$e->getMessage():'خطا در نصب؛ تنظیمات دیتابیس و PHP error log را بررسی کنید.';error_log('ZDIS setup: '.$e->getMessage());}
+}
+function escapeInstall(string $v): string {return htmlspecialchars($v,ENT_QUOTES,'UTF-8');}
+$host=$_SERVER['HTTP_HOST']??'';$suggested=preg_match('/^[a-zA-Z0-9.:[\]-]+$/D',$host)?(($secure?'https':'http').'://'.$host):'';
 ?>
-<!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>نصب ZDIS برای cPanel</title><style>
-*{box-sizing:border-box}body{margin:0;background:#101118;color:#e8e9f1;font:16px/1.8 Tahoma,sans-serif;min-height:100vh;display:grid;place-items:center;background-image:radial-gradient(ellipse at 20% 10%,#45367c66,transparent 55%)}main{width:min(92vw,650px);margin:40px auto;background:#191b26;border:1px solid #34364b;border-radius:24px;padding:36px;box-shadow:0 30px 80px #0005}.logo{width:58px;height:58px;display:grid;place-items:center;background:#8463ff;border-radius:17px;font:bold 30px Arial}h1{font-size:25px;margin-bottom:4px}p{color:#a7adbd}label{display:block;margin-top:15px}input{width:100%;background:#11131b;border:1px solid #383c50;border-radius:10px;padding:12px;color:white;font:inherit;direction:ltr}input:focus{outline:2px solid #977aff}button,a{display:block;background:#8463ff;color:white;border:0;border-radius:10px;padding:13px 20px;text-decoration:none;font:inherit;margin-top:24px;cursor:pointer;width:100%;text-align:center}.tag{color:#a891ff}.error{padding:14px;background:#602736;border-radius:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:500px){.grid{display:block}main{padding:24px}}
-</style><main><div class="logo">Z</div><span class="tag">PHP · MySQL · cPanel</span><h1>راه‌اندازی ZDIS</h1><?php if($success):?><p>نصب با موفقیت انجام شد. نصب‌کننده اکنون قفل است. setup_token را از تنظیمات پاک کنید.</p><a href="/">ورود به ZDIS</a><?php else:?><p>دیتابیس را در cPanel بسازید و اطلاعات آن را در config.php قرار دهید. این مرحله حساب مدیر اولیه را ایجاد می‌کند.</p><?php if($error):?><div class="error"><?=htmlspecialchars($error,ENT_QUOTES,'UTF-8')?></div><?php endif;?><form method="post" autocomplete="off"><label>توکن یک‌بارمصرف نصب<input name="token" type="password" required minlength="32" autocomplete="off"></label><div class="grid"><label>نام کاربری مدیر<input name="username" required minlength="3" maxlength="32" pattern="[a-z0-9._-]+" autocomplete="username"></label><label>نام نمایشی<input name="displayName" maxlength="48" value="Administrator"></label></div><label>ایمیل مدیر<input name="email" type="email" required autocomplete="email"></label><label>رمز مدیر — حداقل ۱۰ نویسه؛ حرف کوچک، حرف بزرگ، عدد و نماد<input name="password" type="password" required minlength="10" maxlength="200" autocomplete="new-password"></label><button type="submit">ایجاد جداول و حساب مدیر</button></form><?php endif;?></main></html>
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>راه‌اندازی ZDIS</title><style>
+@font-face{font-family:Vazir;src:url('/fonts/vazirmatn-arabic.woff2')}*{box-sizing:border-box}body{margin:0;background:#101118;color:#edf0ff;font:15px/1.8 Vazir,Tahoma,sans-serif;min-height:100vh;padding:36px 18px;background-image:radial-gradient(ellipse at 10% 0,#5945b64d,transparent 60%)}main{max-width:800px;margin:auto;background:#191b26;border:1px solid #37394e;border-radius:24px;padding:32px}.brand{display:flex;align-items:center;gap:16px}.logo{background:#8b6cf4;padding:5px 18px;border-radius:16px;font:bold 34px Arial}h1{font-size:24px;margin:0}p{color:#acb3cc}.steps{display:flex;gap:8px;margin:28px 0}.steps span{flex:1;padding:9px;border-bottom:3px solid #35384a;color:#9ba2bb}.steps .active{border-color:#a18aff;color:white}fieldset{border:0;padding:0;margin:0}legend{font-size:20px;margin-bottom:14px}label{display:block;margin:14px 0 5px}input{width:100%;background:#10131c;color:white;border:1px solid #41465e;border-radius:10px;padding:12px;font:inherit;direction:ltr}input:focus{outline:2px solid #a18aff}small{color:#aeb5ca}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.check{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #303345}.ok{color:#8ce7b8}.bad{color:#ff9eac}.notice{background:#25293d;border:1px solid #414963;padding:14px;border-radius:12px;margin:18px 0}.error{border-color:#ad5266;color:#ffb4c2}button,.button{font:inherit;background:#9273f3;border:0;color:white;padding:12px 20px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}button:disabled{opacity:.5;cursor:wait}.secondary{background:#31364b}.actions{display:flex;gap:12px;margin-top:25px}.hidden{display:none}.links{display:flex;gap:12px;flex-wrap:wrap}.password-wrap{display:flex;gap:8px}.password-wrap button{font-size:12px;padding:6px 12px}@media(max-width:600px){main{padding:22px}.grid{grid-template-columns:1fr}.steps span{font-size:12px;padding:6px}}
+</style></head><body><main><div class="brand"><div class="logo">Z</div><div><h1>راه‌اندازی ZDIS</h1><small>PHP · MySQL · cPanel</small></div></div>
+<?php if($locked):?><h2>نصب‌کننده قفل است</h2><p>سایت پیکربندی شده است. با حساب مدیر وارد شوید؛ تنظیمات، مدیریت کاربران و تغییر رمز از داخل برنامه در دسترس هستند.</p><a class="button" href="/">ورود به سایت</a>
+<?php elseif($success):?><h2 class="ok">نصب با موفقیت انجام شد</h2><p>دیتابیس متصل شد، جداول و حساب مدیر ساخته شدند و کلید امنیتی و تنظیمات به‌صورت خودکار ذخیره شدند. نصب مجدد قفل است.</p><div class="notice">با نام کاربری و رمزی که انتخاب کردید وارد شوید. از منوی کاربر، «پنل مدیریت» را باز کنید. برای رمز خودتان از تنظیمات حساب استفاده کنید؛ رمز کاربران دیگر از مدیریت کاربران تغییر می‌کند.</div><div class="links"><a class="button" href="/">ورود و بازکردن پنل مدیریت</a></div>
+<?php else:?><p>اطلاعات دیتابیس و حساب مدیر را وارد کنید؛ نیازی به ویرایش دستی config.php یا ساخت کلید امنیتی ندارید.</p>
+<div class="steps"><span class="active">۱ · پیش‌نیازها</span><span>۲ · اتصال دیتابیس</span><span>۳ · حساب مدیر</span></div>
+<?php if($error):?><div role="alert" class="notice error"><?=escapeInstall($error)?></div><?php endif;?>
+<form method="post" id="installer" autocomplete="off"><input type="hidden" name="csrf" value="<?=escapeInstall($csrf)?>"><input type="hidden" name="action" value="install">
+<fieldset data-step="0"><legend>بررسی محیط نصب</legend><?php foreach($requirements as$name=>$ok):?><div class="check"><span><?=escapeInstall($name)?></span><strong class="<?=$ok?'ok':'bad'?>"><?=$ok?'آماده':'نیاز به بررسی'?></strong></div><?php endforeach;?><div class="notice">در cPanel ابتدا از MySQL Database Wizard یک دیتابیس و کاربر بسازید و کاربر را با دسترسی کامل به همان دیتابیس اضافه کنید. اطلاعات کامل، شامل پیشوند حساب cPanel، در مرحلهٔ بعد وارد می‌شود.</div><small>فقط پوشهٔ public باید در دسترس وب باشد. config.php و storage در پوشهٔ خصوصی ذخیره می‌شوند.</small></fieldset>
+<fieldset data-step="1"><legend>اتصال به دیتابیس</legend><?php if($existing):?><div class="notice">تنظیمات دیتابیس موجود حفظ می‌شود. توکن نصب تعیین‌شده در config.php را وارد کنید.</div><label>توکن نصب<input name="token" type="password" required minlength="32"></label><?php else:?><div class="grid"><label>آدرس دیتابیس<input name="db_host" value="localhost" required maxlength="253"></label><label>پورت<input name="db_port" value="3306" type="number" min="1" max="65535" required></label></div><label>نام کامل دیتابیس<input name="db_name" placeholder="cpaneluser_zdis" required maxlength="64"></label><label>نام کامل کاربر دیتابیس<input name="db_user" placeholder="cpaneluser_zdis" required maxlength="128"></label><label>رمز دیتابیس<input name="db_password" type="password" autocomplete="new-password"></label><label>آدرس سایت<input name="origin" value="<?=escapeInstall($suggested)?>" placeholder="https://chat.example.com" required type="url"></label><small>آدرس ریشهٔ دامنه یا ساب‌دامنه با HTTPS؛ برای نصب واقعی از مسیرهایی مانند /chat استفاده نکنید.</small><?php endif;?><div id="connection" role="status" aria-live="polite"></div></fieldset>
+<fieldset data-step="2"><legend>ساخت حساب مدیر</legend><div class="grid"><label>نام کاربری مدیر<input name="username" autocomplete="username" required minlength="3" maxlength="32" pattern="[a-zA-Z0-9._-]+"></label><label>نام نمایشی<input name="displayName" value="مدیر سایت" maxlength="48" required style="direction:rtl"></label></div><label>ایمیل مدیر<input name="email" type="email" required maxlength="254"></label><label>رمز عبور مدیر</label><div class="password-wrap"><input name="password" type="password" autocomplete="new-password" required minlength="10" maxlength="200"><button type="button" id="show-password" class="secondary" aria-label="نمایش یا پنهان‌کردن رمز">نمایش</button></div><small>حداقل ۱۰ نویسه شامل حرف بزرگ و کوچک انگلیسی، عدد و نماد.</small><label>تکرار رمز<input name="password_confirmation" type="password" autocomplete="new-password" required minlength="10" maxlength="200"></label><div class="notice">این حساب مدیر سامانه است و به پنل مدیریت، تنظیمات و مدیریت رمز کاربران دسترسی دارد. ثبت‌نام عمومی در شروع غیرفعال است.</div></fieldset>
+<div class="actions"><button type="button" id="next" <?=$ready?'':'disabled'?>>ادامه</button><button type="submit" id="install">نصب و ایجاد حساب مدیر</button><button type="button" id="back" class="secondary">بازگشت</button></div></form>
+<script>
+(()=>{const form=document.querySelector('#installer'),fields=[...form.querySelectorAll('[data-step]')],steps=[...document.querySelectorAll('.steps span')],next=document.querySelector('#next'),back=document.querySelector('#back'),install=document.querySelector('#install'),status=document.querySelector('#connection');let step=0;
+function show(){fields.forEach((f,i)=>{f.classList.toggle('hidden',i!==step);f.disabled=i!==step});steps.forEach((s,i)=>s.classList.toggle('active',i===step));back.classList.toggle('hidden',step===0);next.classList.toggle('hidden',step===2);install.classList.toggle('hidden',step!==2)}
+function valid(){return [...fields[step].querySelectorAll('input')].every(i=>i.reportValidity())}
+next.addEventListener('click',async()=>{if(!valid())return;if(step===1){next.disabled=true;status.className='notice';status.textContent='در حال بررسی اتصال…';const data=new FormData(form);data.set('action','check');try{const response=await fetch('/setup.php',{method:'POST',body:data,credentials:'same-origin'}),result=await response.json();status.textContent=result.message;if(!response.ok||!result.ok){status.classList.add('error');return}}catch{status.textContent='ارتباط با نصب‌کننده برقرار نشد. دوباره تلاش کنید.';return}finally{next.disabled=false}}step++;show()});back.addEventListener('click',()=>{step--;show()});document.querySelector('#show-password').addEventListener('click',()=>{const i=form.elements.password;i.type=i.type==='password'?'text':'password'});
+form.addEventListener('submit',e=>{if(step!==2||!valid()){e.preventDefault();return}if(form.elements.password.value!==form.elements.password_confirmation.value){e.preventDefault();form.elements.password_confirmation.setCustomValidity('رمز و تکرار آن یکسان نیستند.');form.elements.password_confirmation.reportValidity();return}fields.forEach(f=>f.disabled=false);install.disabled=true;install.textContent='در حال نصب…'});form.elements.password_confirmation.addEventListener('input',()=>form.elements.password_confirmation.setCustomValidity(''));show()})();
+</script><?php endif;?></main></body></html>

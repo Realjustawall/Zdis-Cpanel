@@ -9,7 +9,7 @@
 راهنمای گام‌به‌گام فارسی: application/INSTALL-fa.md.
 - application شامل بک‌اند مستقل PHP و رابط بیلدشده است. اجرای سایت به Node.js نیاز ندارد.
 - فقط application/public باید Document Root باشد؛ برای دامنهٔ اصلیِ public_html از paths.php طبق راهنما استفاده کنید.
-- config.php، دیتابیس MySQL و کلیدهای تصادفی خودتان را بسازید؛ با setup.php حساب مدیر اولیه را ایجاد کنید.
+- دیتابیس و کاربر را در cPanel بسازید؛ سپس دامنه را باز کنید. نصب‌کننده اطلاعات اتصال و رمز مدیر را می‌گیرد، اتصال را تست می‌کند و config.php و کلید امنیتی را خودکار می‌سازد.
 - ثبت‌نام پیش‌فرض بسته است؛ هیچ رمز آمادهٔ مدیر وجود ندارد.
 
 ## کد و اعتبارسنجی
@@ -25,7 +25,7 @@
 
 ## Build and CI
 
-GitHub Actions builds the original React client, lints PHP, runs both disposable-database API suites (193 checks), and runs browser E2EE/WebRTC smoke checks. A successful run uploads `ZDis-cPanel-PHP-preview.zip` and its SHA-256 file under the **cpanel-install-package** artifact. The ZIP uses the application/source layout documented above.
+GitHub Actions builds the original React client, lints PHP, runs both disposable-database API suites (193 core/API checks plus installer/admin regression checks), and runs browser E2EE/WebRTC smoke checks. A successful run uploads `ZDis-cPanel-PHP-preview.zip` and its SHA-256 file under the **cpanel-install-package** artifact. The ZIP uses the application/source layout documented above.
 
 To rebuild locally with Node.js 24:
 
@@ -40,3 +40,8 @@ python3 scripts/package.py
 Node.js is needed for rebuilding only. The deployed application runs on PHP/MySQL. Production secrets and config.php must stay outside the public document root and outside Git.
 
 The Node.js server in `source/server` is preserved as upstream reference; this cPanel build does not run it. Existing upstream workflows under `source/.github` are reference files. The active workflow is `.github/workflows/cpanel.yml`.
+
+
+## نصب آسان و حساب مدیر
+
+در اولین بازدید، نصب‌کنندهٔ سه‌مرحله‌ای اجرا می‌شود: بررسی پیش‌نیازها، تست اتصال MySQL، ساخت مدیر. رمز مدیر را خودتان انتخاب می‌کنید؛ رمز پیش‌فرض وجود ندارد. پس از نصب، تنظیمات خصوصی ذخیره و نصب مجدد قفل می‌شود. پنل مدیریت از منوی کاربر قابل بازکردن است. تغییر رمز خودتان از تنظیمات حساب و تعیین رمز کاربران از پنل مدیریت انجام می‌شود. آزمون نصب مرورگری و چرخهٔ تغییر رمز/ابطال نشست نیز در CI اجرا می‌شود.
